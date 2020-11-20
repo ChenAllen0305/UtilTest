@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //激光推送
+    compile 'cn.jpush.api:jpush-client:3.3.9'
+    compile 'cn.jpush.api:jiguang-common:1.1.3'
+
+    //计算包
+    compile 'cn.zju.scada:eig-api:1.1.5'
+}
