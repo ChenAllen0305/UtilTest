@@ -1,10 +1,10 @@
-//package JPushUtilTest;
-//
-//import java.util.HashMap;
-//import java.util.Map;
-//
-//public class JPushTest {
-//    public static void main(String[] args) {
+package JPushUtilTest;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class JPushTest {
+    public static void main(String[] args) {
 //        String content = "";
 //        Map<String, String> msg = new HashMap<>();
 //        content = "new alarm occurred";
@@ -14,5 +14,12 @@
 ////        msg.put("title", "PushTitleTest");
 //        msg.put("title", "push test");
 //        JPushUtil.push(msg, "testAlarm");
-//    }
-//}
+        Map<String, String> param = new HashMap<>(2);
+        String tag = "332111254";
+        String content = "The abaabaabaabaabaabaaba";
+        String title = "Alarm Occurred";
+        param.put("msg", content);
+        param.put("title", title);
+        JPushUtil.push(param, tag);
+    }
+}

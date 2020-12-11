@@ -9,7 +9,7 @@ public class RelativePathTest {
     }
 
     public static void readFile() {
-        String pathname = "C:\\Users\\Lorren\\Desktop\\UtilTest\\zhaoqinAbnormal.txt";
+        String pathname = "E:\\2020.11\\AliBmsAbnormal.txt";
         File writeFile = new File(pathname);
         try (FileReader reader = new FileReader(pathname);
              BufferedReader br = new BufferedReader(reader) // 建立一个对象，它把文件内容转成计算机能读懂的语言
@@ -19,16 +19,15 @@ public class RelativePathTest {
             while ((line = br.readLine()) != null) {
                 try {
                     //--------更改阿里取位数
-//                    String start = line.substring(0, line.indexOf("@")+1);
-//                    int i = Integer.valueOf(line.substring(line.indexOf("@")+1, line.indexOf("=="))) + 1;
-//                    String end = line.substring(line.indexOf("=="));
-//                    System.out.println(start + i + end);
+                    String start = line.substring(0, line.indexOf("@")+1);
+                    int i = Integer.valueOf(line.substring(line.indexOf("@")+1, line.indexOf("=="))) + 1;
+                    String end = line.substring(line.indexOf("=="));
+                    System.out.println(start + i + end);
 //                    int ids = line.indexOf("ID(dev)= ") + 9;
 //                    int ide = line.indexOf(" with");
 //                    System.out.println(line.substring(ids, ide));
 //                    set.add(Integer.valueOf(line.substring(ids, ide)));
-                    //修改肇庆取位数目
-                    System.out.println(line);
+//                    System.out.println(line);
                 } catch (Exception e) {
 
                 }

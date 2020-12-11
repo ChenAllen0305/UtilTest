@@ -20,12 +20,12 @@ public class CalculatePackTest {
 //        String formula = "0 * ((var(11071001400313)+var(11071001400314))/1000)";
 //        String formula = "(var(1003400111020)==1)||(var(1003400111020)==2)";
 //        String formula = "var(1003400111020)!=0";
-        String formula = "var(9004576995)@10";
+        String formula = "(var(11081001300118)==7002)||(var(11081001300118)==7004)||(var(11081001300118)==7005)||(var(11081001300118)==7016)";
 //        String formula = "var(1003400112020)==1";
         Map<String, Number> map = new HashMap<>();
-        map.put("9004576995", 512);
+        map.put("11081001300118", 7016);
 //        System.out.println(calculator.eval(formula, map));
         Double result = calculator.eval(formula, map).doubleValue();
-        System.out.println(calculator.eval(formula, map));
+        System.out.println(result);
     }
 }
