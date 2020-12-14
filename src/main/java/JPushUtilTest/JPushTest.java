@@ -15,7 +15,7 @@ public class JPushTest {
 //        msg.put("title", "push test");
 //        JPushUtil.push(msg, "testAlarm");
         Map<String, String> param = new HashMap<>(2);
-        String tag = "test_537847_15068834802";
+        String tag = "testAlarmAbcde";
         String content = "The abaabaabaabaabaabaaba";
         String title = "Alarm Occurred";
         param.put("msg", content);

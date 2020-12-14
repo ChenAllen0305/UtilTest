@@ -133,6 +133,8 @@ public class JPushUtil {
         //创建JPushClient
         JPushClient jpushClient = new JPushClient(MASTER_SECRET, APP_KEY);
         //创建option
+        Audience audience = Audience.tag(tag);
+        System.out.println(audience.toJSON());
         PushPayload payload = PushPayload.newBuilder()
                 //所有平台的用户
                 .setPlatform(Platform.all())
@@ -164,6 +166,7 @@ public class JPushUtil {
                 .build();
         try {
             payload.resetOptionsTimeToLive(15);
+            System.out.println(payload.toJSON());
             PushResult pu = jpushClient.sendPush(payload);
         } catch (APIConnectionException e) {
             e.printStackTrace();
