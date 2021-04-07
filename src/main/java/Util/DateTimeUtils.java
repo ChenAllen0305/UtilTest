@@ -1,8 +1,6 @@
 package Util;
 
 import Util.StringUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -34,7 +32,8 @@ public class DateTimeUtils {
         DATETIME("yyyy-MM-dd HH:mm:ss", "日期时间"),
         DATE("yyyy-MM-dd", "日期"),
         TIME("HH:mm:ss", "时间"),
-        DATETIME_SPACE("yyyy MM dd HH mm ss", "空格间隔的日期时间");
+        DATETIME_SPACE("yyyy MM dd HH mm ss", "空格间隔的日期时间"),
+        DATETIME_MILLI("yyyy-MM-dd HH:mm:ss.SSS", "日期时间毫秒");
         private String value;
         private String title;
         PATTERN(String value, String title) {
@@ -54,7 +53,7 @@ public class DateTimeUtils {
      */
     private static final ZoneId ZONE_ID = ZoneId.systemDefault();
 
-    private static Logger logger = LoggerFactory.getLogger(DateTimeUtils.class);
+//    private static Logger logger = LoggerFactory.getLogger(DateTimeUtils.class);
 
     private static Map<String, DateTimeFormatter> patternFormatterMap = new ConcurrentHashMap<>();
     private static Map<String, ZoneId> idZoneMap = new ConcurrentHashMap<>();
@@ -356,7 +355,7 @@ public class DateTimeUtils {
         try {
             date = dateFormat.parse(dateTime);
         } catch (ParseException e) {
-            logger.error("解析时间失败", e);
+//            logger.error("解析时间失败", e);
         }
         return date;
     }
@@ -601,5 +600,44 @@ public class DateTimeUtils {
         Instant instant = of.toInstant(from);
         of = LocalDateTime.ofInstant(instant, ZoneId.of(timeZoneId).getRules().getOffset(of));
         return of;
+    }
+
+    public static String getTimeZoneIdByDtimeAndRtime(String dtime, Long rtime) {
+        String[] timeZoneIds = TimeZone.getAvailableIDs();
+        for (String timeZoneId : timeZoneIds) {
+            if (getDateString(rtime, timeZoneId).equals(dtime)) {
+                return timeZoneId;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 处理15分钟时间对象
+     * @param minute
+     * @param localDateTime
+     * @return
+     */
+    public static LocalDateTime timeHandle(int minute, LocalDateTime localDateTime) {
+        if (minute >= 45) {
+            localDateTime = localDateTime.withMinute(45);
+        } else if (minute >= 30) {
+            localDateTime = localDateTime.withMinute(30);
+        } else if (minute >= 15) {
+            localDateTime = localDateTime.withMinute(15);
+        } else  if (minute >= 0) {
+            localDateTime = localDateTime.withMinute(0);
+        }
+        return localDateTime;
+    }
+
+    /**
+     * 生成时间范围字段
+     * @param start
+     * @param end
+     * @return
+     */
+    public static String asDateString(LocalDateTime start, LocalDateTime end) {
+        return DateTimeUtils.format(start) + "," + DateTimeUtils.format(end);
     }
 }

@@ -1,5 +1,7 @@
 package CsvReadTest;
 
+import Util.StringUtil;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,32 +12,31 @@ public class AbnormalRuleZhaoqin {
     }
 
     public static void readFile() {
-        String pathname = "E:\\2020.11\\ZhaoqinPcs.csv";
-        File writeFile = new File(pathname);
+        String pathname = "E:\\2021.02\\zqdq.csv";
         try (FileReader reader = new FileReader(pathname);
              BufferedReader br = new BufferedReader(reader)
         ) {
             String line;
-            Map<Long, String> map = new HashMap<>();
-            int i = 21;
             while ((line = br.readLine()) != null) {
                 try {
                     String[] lineList = line.split(",");
-                    String pointNumber = "110499999" + i;
                     String devId = lineList[0];
-                    String measPn = "1104" +lineList[1];
-                    String bit = lineList[2];
-                    String title = lineList[3];
-                    String level = lineList[4];
+                    String measPn = lineList[4];
+                    String title = lineList[1];
+                    String result = lineList[2];
+                    String level = lineList[3];
+                    if ("Ignore".equals(level)) {
+                        continue;
+                    }
+                    if (StringUtil.isEmpty(level)) {
+                        continue;
+                    }
                     System.out.println("match (d:Device),(al:AlarmLevel{name:'" + level + "'}) where ID(d)=" + devId + " " +
                             "create (d)-[:HAS_ABNORMAL_RULE]->(ar:AbnormalRule{title:'" + title + "'})-[:ALARM_LEVEL_OF" +
-                            "{formula:'var(" + measPn + ")@" + bit + "==1'," +
+                            "{formula:'var(" + measPn + ")==" + result + "'," +
                             "measPointNumberStr:'" + measPn + "'," +
-                            "measPointNumbers:[" + measPn + "]," +
-                            "pointNumber:" + pointNumber + "}" +
-                            "]->(al);");
-
-                    i++;
+                            "measPointNumbers:[" + measPn + "]" +
+                            "}]->(al);");
                 } catch (Exception e) {
 
                 }

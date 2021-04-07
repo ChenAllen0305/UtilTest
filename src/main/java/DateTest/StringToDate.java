@@ -1,8 +1,11 @@
 package DateTest;
 
+import Util.DateTimeUtils;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,11 +35,16 @@ public class StringToDate {
 //        Date date2 = sdf2.parse(s2);
 //        System.out.println(date2);
 
-        String s3 = "00:00:00";
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        Date date2 = sdf3.parse(s3);
-        Date date = dateFormat.parse(s3);
-        System.out.println(s3);
-        System.out.println(date);
+//        String s3 = "00:00:00";
+//        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+//        Date date2 = sdf3.parse(s3);
+//        Date date = dateFormat.parse(s3);
+//        System.out.println(s3);
+//        System.out.println(date);
+        LocalDateTime startMonth = LocalDateTime.now().withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
+        String loopMonthDtime = DateTimeUtils.format(startMonth);
+        Long loopMonthRtime = DateTimeUtils.getTimestamp(loopMonthDtime, "Australia/Queensland");
+        System.out.println(loopMonthDtime);
+        System.out.println(loopMonthRtime);
     }
 }

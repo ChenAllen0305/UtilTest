@@ -18,12 +18,12 @@ import java.util.*;
 public class JPushUtil {
 
     //云能
-//    private static String APP_KEY = "d4f5597e2edd8096c9b40c55";
-//    private static String MASTER_SECRET = "0ab8b608aeab27769df240cf";
+    private static String APP_KEY = "d4f5597e2edd8096c9b40c55";
+    private static String MASTER_SECRET = "0ab8b608aeab27769df240cf";
 
     //PowerPlus
-    private static String APP_KEY = "8c737d47b7257dcf2a545ab8";
-    private static String MASTER_SECRET = "73bcf9e8ec19e3dd95b6de29";
+//    private static String APP_KEY = "8c737d47b7257dcf2a545ab8";
+//    private static String MASTER_SECRET = "73bcf9e8ec19e3dd95b6de29";
 
     public static void push(Map<String, String> parm, List<String> list) {
         jpushAndroid(parm, list);
@@ -134,7 +134,7 @@ public class JPushUtil {
         JPushClient jpushClient = new JPushClient(MASTER_SECRET, APP_KEY);
         //创建option
         Audience audience = Audience.tag(tag);
-        System.out.println(audience.toJSON());
+//        System.out.println(audience.toJSON());
         PushPayload payload = PushPayload.newBuilder()
                 //所有平台的用户
                 .setPlatform(Platform.all())
@@ -166,7 +166,7 @@ public class JPushUtil {
                 .build();
         try {
             payload.resetOptionsTimeToLive(15);
-            System.out.println(payload.toJSON());
+//            System.out.println(payload.toJSON());
             PushResult pu = jpushClient.sendPush(payload);
         } catch (APIConnectionException e) {
             e.printStackTrace();
