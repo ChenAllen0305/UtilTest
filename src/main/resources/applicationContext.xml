@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 注册目标类 -->
+    <bean id="userService" class="AOP.service.Impl.UserServiceImpl"></bean>
+    <!-- 注册前置通知 -->
+    <bean id="beforeAdvice" class="AOP.advice.BeforeAdvice"></bean>
+    <!-- 注册返回通知 -->
+    <bean id="afterAdvice" class="AOP.advice.AfterAdvice"></bean>
+    <!-- 注册环绕通知 -->
+    <bean id="interceptor" class="AOP.intercepror.Interceptor"></bean>
+
+    <!-- 注册代理类 -->
+    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 注定目标对象 -->
+        <property name="target" ref="userService"></property>
+        <!-- 执行目标类实现的接口 -->
+        <property name="interfaces" value="AOP.service.UserService"></property>
+        <!-- 指定切面 -->
+        <property name="interceptorNames">
+            <list>
+                <value>beforeAdvice</value>
+                <value>afterAdvice</value>
+                <value>interceptor</value>
+            </list>
+        </property>
+    </bean>
+</beans>
