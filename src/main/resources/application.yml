@@ -1,0 +1,4 @@
+weChat:
+  grant_type:client_credential
+  appid:wxf2e6e6a9808d9874
+  secret:d6ac1d669e88db22ba15da305536c591

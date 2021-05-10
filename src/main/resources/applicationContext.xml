@@ -26,4 +26,5 @@
             </list>
         </property>
     </bean>
+    <bean id="userService" class="java.lang.Object"/>
 </beans>
