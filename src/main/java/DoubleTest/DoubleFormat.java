@@ -1,19 +1,20 @@
 package DoubleTest;
 
-import Util.DateTimeUtils;
-
 import java.text.DecimalFormat;
-import java.util.Date;
 
 public class DoubleFormat {
     public static void main(String[] args) {
-        Double d = 0.0;
+        double d = 10.0;
         DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df2 = new DecimalFormat("0");
         System.out.println(df.format(d));
-//        d = d / 10000;
         System.out.println(d);
-//        Double d1 = null;
-//        String out = (d1==null)?"0":String.valueOf(d1);
-//        System.out.println(out);
+
+        double d2 = 123.81;
+        System.out.println(df2.format(d2));
+
+        double percent = d2 * 100;
+        System.out.println(Integer.valueOf(df2.format(percent)));
+        System.out.println((int) percent);
     }
 }
