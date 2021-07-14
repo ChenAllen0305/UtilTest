@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * Description:
  */
 @Component
-@ConfigurationProperties(prefix = "weChat")
+@ConfigurationProperties(prefix = "wechat")
 public class WeChartConfig {
     private String grant_type;
     private String appid;

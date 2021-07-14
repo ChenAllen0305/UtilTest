@@ -32,14 +32,34 @@ public class CalendarTest {
 //        System.out.println(startTime.getTime());
 //        int result = startTime.compareTo(now);
 //        System.out.println(result);
-        Date date = new Date();
+        //--------------------------------
+//        Date date = new Date();
+//        Calendar instance = Calendar.getInstance();
+//        instance.setTime(date);
+//        instance.set(Calendar.HOUR, -12);
+//        instance.set(Calendar.MINUTE, 0);
+//        instance.set(Calendar.SECOND, 0);
+//        instance.set(Calendar.MILLISECOND, 0);
+//        date = instance.getTime();
+//        System.out.println(DateTimeUtils.format(date));
+//
+//        Date start = DateTimeUtils.formatToDate("2021-05-24 00:00:00");
+//        Calendar startCal = Calendar.getInstance();
+//        startCal.setTime(start);
+//        Date end = DateTimeUtils.formatToDate("2021-05-25 00:00:00");
+//        Calendar endCal = Calendar.getInstance();
+//        endCal.setTime(end);
+        //-------------------------------------
+        Date endDate = new Date();
+        System.out.println(endDate);
         Calendar instance = Calendar.getInstance();
-        instance.setTime(date);
-        instance.set(Calendar.HOUR, -12);
+        instance.setTime(endDate);
+        instance.add(Calendar.DAY_OF_YEAR, -365);
+        instance.set(Calendar.HOUR_OF_DAY, 0);
         instance.set(Calendar.MINUTE, 0);
         instance.set(Calendar.SECOND, 0);
         instance.set(Calendar.MILLISECOND, 0);
-        date = instance.getTime();
-        System.out.println(DateTimeUtils.format(date));
+        Date startDate = instance.getTime();
+        System.out.println(startDate);
     }
 }

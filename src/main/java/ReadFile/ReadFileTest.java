@@ -17,13 +17,15 @@ public class ReadFileTest {
     private String appId;
     private String secret;
     @Autowired
-    private WeChartConfig config = new WeChartConfig();
+    private static WeChartConfig config;
+    @Autowired
+    private static SimulatedDataConfig dataConfig;
 
     public static void main(String[] args) {
 //        System.out.println(grantType);
 
-//        System.out.println(config.getAppid());
-//        System.out.println(config.getGrant_type());
-//        System.out.println(config.getSecret());
+        System.out.println(config.getAppid());
+        System.out.println(config.getGrant_type());
+        System.out.println(config.getSecret());
     }
 }

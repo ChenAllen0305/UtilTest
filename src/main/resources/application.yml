@@ -1,4 +1,39 @@
-weChat:
-  grant_type:client_credential
-  appid:wxf2e6e6a9808d9874
-  secret:d6ac1d669e88db22ba15da305536c591
+wechat:
+  grant_type: client_credential
+  appid: wxf2e6e6a9808d9874
+  secret: d6ac1d669e88db22ba15da305536c591
+
+simulatedData:
+  productName: Pencil
+  equipmentName: E001
+  equipmentId: 1
+  area: 天津
+  energyRandomMin: 10
+  energyRandomMax: 20
+  amountRandomMin: 10
+  amountRandomMax: 30
+  powerTransformer:
+    - rawC
+    - coke
+    - ele
+    - steam
+  regulatingTransformer:
+    - rawC
+    - coke
+    - ele
+    - steam
+  audioFrequencyTransformer:
+    - rawC
+    - coke
+    - ele
+    - steam
+  intermediateFrequencyTransformer:
+    - rawC
+    - coke
+    - ele
+    - steam
+  highFrequencyTransformer:
+    - rawC
+    - coke
+    - ele
+    - steam

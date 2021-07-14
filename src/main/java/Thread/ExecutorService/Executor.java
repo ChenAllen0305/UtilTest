@@ -10,9 +10,10 @@ import java.util.concurrent.Executors;
  * Description: 限制线程数
  */
 public class Executor {
+    //定义线程数最大值
+    private static int MAX_THREADS = 3;
 
     public static void main(String[] args) {
-        final int MAX_THREADS = 3;//定义线程数最大值
 
         ExecutorService executorService = Executors.newFixedThreadPool(MAX_THREADS);
 

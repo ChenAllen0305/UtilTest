@@ -44,4 +44,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 
+    // https://mvnrepository.com/artifact/commons-net/commons-net
+    implementation group: 'commons-net', name: 'commons-net', version: '3.8.0'
+    // https://mvnrepository.com/artifact/dnsjava/dnsjava
+    implementation group: 'dnsjava', name: 'dnsjava', version: '2.1.7'
+
 }
