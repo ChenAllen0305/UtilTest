@@ -49,4 +49,8 @@ dependencies {
     // https://mvnrepository.com/artifact/dnsjava/dnsjava
     implementation group: 'dnsjava', name: 'dnsjava', version: '2.1.7'
 
+    // https://mvnrepository.com/artifact/net.sf.dozer/dozer
+    implementation group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+
+
 }

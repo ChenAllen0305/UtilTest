@@ -37,3 +37,8 @@ simulatedData:
     - coke
     - ele
     - steam
+
+test:
+  array1: aaa,bbb,ccc
+  array2: 111,222,333
+  array3: 11.1,22.2,33.3
