@@ -50,16 +50,22 @@ public class CalendarTest {
 //        Calendar endCal = Calendar.getInstance();
 //        endCal.setTime(end);
         //-------------------------------------
+        Date startDate = DateTimeUtils.formatToDate("2020-08-02 00:00:00");
         Date endDate = new Date();
         System.out.println(endDate);
         Calendar instance = Calendar.getInstance();
         instance.setTime(endDate);
-        instance.add(Calendar.DAY_OF_YEAR, -365);
-        instance.set(Calendar.HOUR_OF_DAY, 0);
-        instance.set(Calendar.MINUTE, 0);
-        instance.set(Calendar.SECOND, 0);
-        instance.set(Calendar.MILLISECOND, 0);
-        Date startDate = instance.getTime();
-        System.out.println(startDate);
+        instance.add(Calendar.HOUR_OF_DAY, -24);
+//        instance.set(Calendar.HOUR_OF_DAY, 0);
+//        instance.set(Calendar.MINUTE, 0);
+//        instance.set(Calendar.SECOND, 0);
+//        instance.set(Calendar.MILLISECOND, 0);
+        Date date = instance.getTime();
+        System.out.println(date);
+//        if (date.before(startDate)) {
+//            System.out.println("more than one year");
+//        } else {
+//            System.out.println("in");
+//        }
     }
 }

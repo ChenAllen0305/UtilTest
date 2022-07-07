@@ -26,7 +26,7 @@ public class CreateDir {
         System.out.println(tempFile.getAbsolutePath());
     }
 
-    private static File getBaseJarPath() {
+    public static File getBaseJarPath() {
         ApplicationHome home = new ApplicationHome(CreateDir.class);
         File jarFile = home.getSource();
         return jarFile.getParentFile();

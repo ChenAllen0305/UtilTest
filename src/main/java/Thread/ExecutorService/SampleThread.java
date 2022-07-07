@@ -10,7 +10,7 @@ import java.util.Date;
  * date: 2021/5/19
  * Description:
  */
-public class SampleThread implements Runnable{
+public class SampleThread implements Runnable {
     private int no;
     private int time;
 

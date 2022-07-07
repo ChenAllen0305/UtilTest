@@ -1,10 +1,11 @@
 package QueueTest;
 
-import cn.jpush.api.report.UsersResult;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+@Slf4j
 public class QueueTest1 {
     public static void main(String[] args) {
         Queue<String> queue = new LinkedList<String>();
@@ -13,10 +14,11 @@ public class QueueTest1 {
         queue.offer("c");
         queue.offer("d");
         queue.offer("e");
-        for (String q : queue) {
-            System.out.println(q);
+        log.info("size: " + queue.size());
+
+        for (int i = 1; i <= 20; i++) {
+            log.info("object:" + queue.poll());
         }
-        System.out.println(queue.element());
-        System.out.println(queue.peek());
+        log.info("size: " + queue.size());
     }
 }

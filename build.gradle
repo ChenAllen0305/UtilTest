@@ -30,7 +30,7 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
     // https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test
-//    testCompile group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '2.5.10.RELEASE'
+    testCompile group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '2.5.10.RELEASE'
 
 
     compile 'mysql:mysql-connector-java'
@@ -51,6 +51,27 @@ dependencies {
 
     // https://mvnrepository.com/artifact/net.sf.dozer/dozer
     implementation group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.1.2.RELEASE'
+
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '11.0'
+
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.78'
+
+    // https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter
+//    implementation group: 'org.apache.rocketmq', name: 'rocketmq-spring-boot-starter', version: '2.1.1'
+
+    // https://mvnrepository.com/artifact/com.spring4all/swagger-spring-boot-starter
+    implementation group: 'com.spring4all', name: 'swagger-spring-boot-starter', version: '1.7.0.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client
+    implementation group: 'org.apache.rocketmq', name: 'rocketmq-client', version: '4.9.3'
+
+    // https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-acl
+    implementation group: 'org.apache.rocketmq', name: 'rocketmq-acl', version: '4.9.3'
 
 
 }

@@ -5,7 +5,6 @@ import sun.rmi.runtime.Log;
 public class Cat {
     public static final String TAG = Cat.class.getSimpleName();
     private String name;
-    @Deprecated
     public int age;
 
     public Cat(String name, int age){
@@ -27,7 +26,7 @@ public class Cat {
             s.append(food);
             s.append(" ");
         }
-        System.out.println(TAG + " eat food " + s.toString());
+        System.out.println(TAG + " eat food " + s);
     }
 
     public void sleep(){

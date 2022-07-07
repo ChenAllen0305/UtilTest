@@ -2,6 +2,8 @@ package ConfigurationTest;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.Date;
+
 /**
  * ClassName: ValueTest
  * Author: ChenLun
@@ -23,5 +25,8 @@ public class ValueTest {
         System.out.println(testArray1);
         System.out.println(testArray2);
         System.out.println(testArray3);
+
+        Date date = new Date();
+        Long time = date.getTime();
     }
 }

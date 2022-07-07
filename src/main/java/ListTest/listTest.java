@@ -14,5 +14,7 @@ public class listTest {
 //        System.out.println(list.size());
 //        System.out.println(list.get(list.size()));
         System.out.println(list);
+        Long getLong = list.get(list.size() - 1);
+        System.out.println(getLong);
     }
 }

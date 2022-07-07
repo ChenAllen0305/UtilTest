@@ -42,3 +42,19 @@ test:
   array1: aaa,bbb,ccc
   array2: 111,222,333
   array3: 11.1,22.2,33.3
+tenant:
+  # 租户前缀
+  prefix:
+    "tj": "88.155.109"
+    "2356b5ce-d69c-4469-b5f6-b44b8dac1510": "88.155.110"
+  # 每次定时任务下不同租户的解析数量
+  count:
+    "tj": 20
+    "2356b5ce-d69c-4469-b5f6-b44b8dac1510": 30
+  threshold:
+    - code: "tj"
+      min: 20
+      max: 200
+    - code: "2356b5ce-d69c-4469-b5f6-b44b8dac1510"
+      min: 30
+      max: 300

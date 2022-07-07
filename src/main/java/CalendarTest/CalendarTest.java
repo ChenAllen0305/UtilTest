@@ -1,6 +1,7 @@
 package CalendarTest;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @title: CalendarTest
@@ -14,5 +15,13 @@ public class CalendarTest {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println(year + " " + month + " " + day);
+
+        Calendar calendar1 = Calendar.getInstance();
+        calendar1.set(Calendar.HOUR_OF_DAY, 0);
+        calendar1.set(Calendar.MINUTE, 0);
+        calendar1.set(Calendar.SECOND, 0);
+        calendar1.set(Calendar.MILLISECOND, 0);
+        Date date = calendar1.getTime();
+        System.out.println(date);
     }
 }
