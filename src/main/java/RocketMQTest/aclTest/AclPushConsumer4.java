@@ -23,7 +23,7 @@ public class AclPushConsumer4 {
     public static void main(String[] args) throws MQClientException {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group4", getLocalAclHook(), new AllocateMessageQueueAveragely());
 
-        consumer.setNamesrvAddr("localhost:9876");
+        consumer.setNamesrvAddr("10.7.1.60:9876");
 
         consumer.subscribe("topicA", "*");
 

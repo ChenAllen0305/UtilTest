@@ -11,10 +11,12 @@ import java.util.Date;
 public class CalendarTest {
     public static void main(String[] args) {
         Calendar calendar = Calendar.getInstance();
+        int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println(year + " " + month + " " + day);
+        System.out.println(dayOfYear);
 
         Calendar calendar1 = Calendar.getInstance();
         calendar1.set(Calendar.HOUR_OF_DAY, 0);

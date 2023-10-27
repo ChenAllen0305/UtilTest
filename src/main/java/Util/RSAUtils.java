@@ -134,4 +134,10 @@ public class RSAUtils {
         String outStr = new String(cipher.doFinal(inputByte));
         return outStr;
     }
+
+    public static void main(String[] args) throws Exception {
+        RSAUtils rsaUtils = new RSAUtils();
+        String password = rsaUtils.decrypt("YiCQTsQIikksKmcoXugaHg==", "abcdefgabcdefg12");
+        System.out.println("password: " + password);
+    }
 }

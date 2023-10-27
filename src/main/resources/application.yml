@@ -58,3 +58,11 @@ tenant:
     - code: "2356b5ce-d69c-4469-b5f6-b44b8dac1510"
       min: 30
       max: 300
+
+#bizModel:
+#  name: biz-model
+#unicloud-ps:
+#  name: unicloud-ps
+
+bizModel.name: biz-model
+unicloud-ps.name: unicloud-ps

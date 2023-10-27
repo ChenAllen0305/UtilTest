@@ -150,16 +150,19 @@ public class AesUtil {
      * 测试
      */
     public static void main(String[] args) throws Exception {
-        String content = "zgy@TJEJJD888";
-        System.out.println("加密前：" + content);
-        System.out.println("加密密钥和解密密钥：" + KEY);
-        String encrypt = aesEncrypt(content, KEY);
-        System.out.println("加密后：" + encrypt);
-        String decrypt = aesDecrypt("BN2VC2IsYGwpr/aN0mXeIA==", KEY);
-        System.out.println("解密后：" + decrypt);
+//        String content = "zgy@TJEJJD888";
+//        System.out.println("加密前：" + content);
+//        System.out.println("加密密钥和解密密钥：" + KEY);
+//        String encrypt = aesEncrypt(content, KEY);
+//        System.out.println("加密后：" + encrypt);
+//        String decrypt = aesDecrypt("BN2VC2IsYGwpr/aN0mXeIA==", KEY);
+//        System.out.println("解密后：" + decrypt);
+//
+//        String test = "2f6DhqPBNoK3f2A7FFqAXA==";
+//        String s = aesDecrypt(test);
+//        System.out.println(s);
 
-        String test = "2f6DhqPBNoK3f2A7FFqAXA==";
-        String s = aesDecrypt(test);
-        System.out.println(s);
+        String password = aesDecrypt("YiCQTsQIikksKmcoXugaHg==", "abcdefgabcdefg12");
+        System.out.println("password: " + password);
     }
 }

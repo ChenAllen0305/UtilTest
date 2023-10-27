@@ -20,5 +20,8 @@ public class SetEmptyTest {
         List<String> list2 = Arrays.asList("1", "2");
         set.addAll(list2);
         System.out.println(EmptyUtil.isEmpty(set));
+
+        Set<String> emptySet = new HashSet<>();
+        System.out.println(new ArrayList<>(emptySet));
     }
 }

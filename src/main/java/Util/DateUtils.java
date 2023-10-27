@@ -26,7 +26,7 @@ public class DateUtils {
     private final static Logger logger = LoggerFactory.getLogger(DateUtils.class);
 
     public static String format(Date date) {
-        return format(date, DATE_PATTERN);
+        return format(date, DATE_TIME_PATTERN);
     }
 
     public static String format(Date date, String pattern) {

@@ -1,5 +1,6 @@
 package RocketMQTest.aclTest;
 
+import Util.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.acl.common.AclClientRPCHook;
 import org.apache.rocketmq.acl.common.SessionCredentials;
@@ -10,6 +11,8 @@ import org.apache.rocketmq.client.consumer.rebalance.AllocateMessageQueueAverage
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.remoting.RPCHook;
+
+import java.util.Date;
 
 /**
  * @className: Consumer
@@ -25,7 +28,7 @@ public class AclPushConsumer2 {
 
         consumer.setNamesrvAddr("localhost:9876");
 
-        consumer.subscribe("topicB1", "*");
+        consumer.subscribe("orderTopic", "*");
 
 //        consumer.setConsumeMessageBatchMaxSize(10);
 
@@ -34,17 +37,17 @@ public class AclPushConsumer2 {
         consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
             for (MessageExt msg : msgs) {
                 String message = new String(msg.getBody());
-                log.info(message);
-                try {
-                    int i = 1 / 0;
-                } catch (Exception e) {
-                    log.error("异常重试" + msg.getTopic() + " " + msg.getReconsumeTimes());
-                    if (msg.getReconsumeTimes() <= 5) {
-                        return ConsumeConcurrentlyStatus.RECONSUME_LATER;
-                    } else {
-                        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-                    }
-                }
+                log.info("messageId: " + msg.getMsgId() + ", message: " + message + ", " + DateUtils.format(new Date()));
+//                try {
+//                    int i = 1 / 0;
+//                } catch (Exception e) {
+//                    log.error("异常重试" + msg.getTopic() + " " + msg.getReconsumeTimes());
+//                    if (msg.getReconsumeTimes() <= 5) {
+//                        return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+//                    } else {
+//                        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+//                    }
+//                }
             }
             return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         });

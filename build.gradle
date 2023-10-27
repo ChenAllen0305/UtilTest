@@ -73,5 +73,16 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-acl
     implementation group: 'org.apache.rocketmq', name: 'rocketmq-acl', version: '4.9.3'
 
+    implementation group: 'com.unicloud', name: 'message', version: '0.0.2-SNAPSHOT'
+
+    // https://mvnrepository.com/artifact/com.alibaba/easyexcel
+    implementation group: 'com.alibaba', name: 'easyexcel', version: '3.1.1'
+
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.70'
+
+// https://mvnrepository.com/artifact/cn.hutool/hutool-all
+    implementation group: 'cn.hutool', name: 'hutool-all', version: '5.8.12'
+
 
 }

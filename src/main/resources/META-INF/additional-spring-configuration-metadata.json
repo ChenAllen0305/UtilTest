@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "simulatedData.productName",
+      "type": "java.lang.String",
+      "description": "Description for simulatedData.productName."
+  }
+] }

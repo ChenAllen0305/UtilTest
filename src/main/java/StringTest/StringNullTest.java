@@ -4,11 +4,12 @@ import java.nio.charset.StandardCharsets;
 
 public class StringNullTest {
     public static void main(String[] args) {
-        String s = null;
+        String s = "s1";
+        String s2 = "s2";
 
 //        System.out.println(s.equals(null));
 //        System.out.println(s.isEmpty());
-        System.out.println(s == null);
+        System.out.println(!s.equals(s2));
 
 //        for (int i = 1; i<=36 ; i++) {
 //            System.out.println("(s1)-[:HAS_MENU]->(m" + i + "),");
